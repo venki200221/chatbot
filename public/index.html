@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Display a map on a webpage</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+
+<style>
+body { margin:100px; padding:100px; }
+#map { position: absolute; top: 100px; bottom: 100px; width: 100%; margin-left:100%;}
+</style>
+<script type="application/javascript">
+    window.tiledeskSettings =
+     {
+          projectid: "63dd4d6c95ad41001b32de24"
+     };
+     (function(d, s, id) {
+          var w=window; var d=document; var i=function() { i.c(arguments); };
+          i.q=[]; i.c=function(args){ i.q.push(args); }; w.Tiledesk=i;
+          var js, fjs=d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js=d.createElement(s); js.id=id; js.async=true;
+          js.src="https://widget.tiledesk.com/v5/launch.js";
+          fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'tiledesk-jssdk'));
+</script>
+</head>
+<body>
+<div id="map"></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoidmVua2kyMDAyIiwiYSI6ImNsN2hwNThsdjAyaXIzdG1kNDB6bTN1cXAifQ.TF0cpRRBlCRAcTXaItBFkg';
+const map = new mapboxgl.Map({
+container: 'map', // container ID
+// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+style: 'mapbox://styles/mapbox/streets-v12', // style URL
+center: [12.9662976,77.6077312], // starting position [lng, lat]
+zoom: 9 // starting zoom
+});
+</script>
+ 
+</body>
+</html>
